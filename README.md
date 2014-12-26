@@ -32,7 +32,7 @@ $php       = $wporgClient->getStats('php');
 $mysql     = $wporgClient->getStats('mysql');
 ```
 
-## Core updates
+### Core updates
 
 ```php
 $latest_updates = $wporgClient->getUpdates();
