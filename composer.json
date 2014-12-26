@@ -1,0 +1,22 @@
+{
+    "name"       : "rarst/wporg-client",
+    "description": "Guzzle client for WordPress.org APIs",
+    "license"    : "MIT",
+    "authors"    : [
+        {
+            "name"    : "Andrey Savchenko",
+            "email"   : "contact@rarst.net",
+            "homepage": "http://www.Rarst.net/"
+        }
+    ],
+    "require"    : {
+        "php"                       : ">=5.4",
+        "guzzlehttp/guzzle"         : "~5.0",
+        "guzzlehttp/guzzle-services": "~0.5"
+    },
+    "autoload"   : {
+        "psr-4": {
+            "Rarst\\Guzzle\\": "php/"
+        }
+    }
+}
