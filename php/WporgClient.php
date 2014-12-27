@@ -24,6 +24,11 @@ class WporgClient extends GuzzleClient
         return new self($client, $description, $config);
     }
 
+    public static function toObject(array $array)
+    {
+        return (object) $array;
+    }
+
     public function getSalt()
     {
         $command  = $this->getCommand('getSalt');

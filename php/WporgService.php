@@ -138,7 +138,7 @@ class WporgService
                             'location' => 'postField',
                             'type'     => 'array',
                             'filters'  => [
-                                'stdClass::__set_state',
+                                'Rarst\\Guzzle\\WporgClient::toObject',
                                 'serialize',
                             ],
                         ],
