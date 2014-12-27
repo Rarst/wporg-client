@@ -218,6 +218,16 @@ class WporgService
                         ],
                     ],
                 ],
+                'serializedArray' => [
+                    'type'       => 'object',
+                    'properties' => [
+                        'body' => [
+                            'location' => 'body',
+                            'type'     => 'string',
+                            'filters'  => [ 'unserialize' ],
+                        ],
+                    ],
+                ],
             ]
         ];
     }
