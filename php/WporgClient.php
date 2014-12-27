@@ -29,6 +29,11 @@ class WporgClient extends GuzzleClient
         return (object) $array;
     }
 
+    public static function maybeToArray($input)
+    {
+        return is_object($input) ? get_object_vars($input) : $input;
+    }
+
     public function getSalt()
     {
         $command  = $this->getCommand('getSalt');

@@ -195,7 +195,7 @@ class WporgService
                 ],
                 'getCoreBrowseHappy'    => [
                     'summary'       => 'Get reference to documentation.',
-                    'responseModel' => 'serializedArray',
+                    'responseModel' => 'serialized',
                     'httpMethod'    => 'POST',
                     'uri'           => '/core/browse-happy/{api_version}/',
                     'parameters'    => [
@@ -230,17 +230,7 @@ class WporgService
                         'body' => [
                             'location' => 'body',
                             'type'     => 'string',
-                            'filters'  => [ 'unserialize', 'get_object_vars' ],
-                        ],
-                    ],
-                ],
-                'serializedArray' => [
-                    'type'       => 'object',
-                    'properties' => [
-                        'body' => [
-                            'location' => 'body',
-                            'type'     => 'string',
-                            'filters'  => [ 'unserialize' ],
+                            'filters'  => [ 'unserialize', 'Rarst\\Guzzle\\WporgClient::maybeToArray' ],
                         ],
                     ],
                 ],
