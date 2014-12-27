@@ -18,37 +18,14 @@ $wporgClient = \Rarst\Guzzle\WporgClient::getClient();
 
 ## Examples
 
-### Secret keys & salts
+### Core
 
 ```php
-$secret = $wporgClient->getSalt();
-```
-
-### Stats
-
-```php
-$wordpress = $wporgClient->getStats('wordpress');
-$php       = $wporgClient->getStats('php');
-$mysql     = $wporgClient->getStats('mysql');
-```
-
-### Core updates
-
-```php
-$latest_updates = $wporgClient->getUpdates();
-$updates_for    = $wporgClient->getUpdates('4.0', 'en_US');
-```
-
-### Credits
-
-```php
-$credits = $wporgClient->getCredits('4.1');
-```
-
-### Translations
-
-```php
+$updates      = $wporgClient->getUpdates();
+$updatesFor   = $wporgClient->getUpdates('4.0', 'en_US');
 $translations = $wporgClient->getTranslations('4.1');
+$credits      = $wporgClient->getCredits('4.1');
+$checksums    = $wporgClient->getChecksums('4.1', 'en_US');
 ```
 
 ### Themes
@@ -66,21 +43,26 @@ $plugin       = $wporgClient->getPlugin('hello-dolly');
 $stats        = $wporgClient->getPluginStats('hello-dolly');
 $downloads    = $wporgClient->getPluginDownloads('hello-dolly', 7);
 $translations = $wporgClient->getPluginTranslations('akismet', '3.0');
+$importers    = $wporgClient->getImporters();
 ```
 
-### Popular importers
+### Other
+
+#### Stats
 
 ```php
-$importers = $wporgClient->getImporters();
+$wordpress = $wporgClient->getStats('wordpress');
+$php       = $wporgClient->getStats('php');
+$mysql     = $wporgClient->getStats('mysql');
 ```
 
-### Core checksums
+#### Secret keys & salts
 
 ```php
-$checksums = $wporgClient->getChecksums('4.1', 'en_US');
+$secret = $wporgClient->getSalt();
 ```
 
-### Browse happy
+#### Browse happy
 
 ```php
 $browser = $wporgClient->getBrowserUpdate('Opera/9.80 (Windows NT 6.1; WOW64) Presto/2.12.388 Version/12.17');
