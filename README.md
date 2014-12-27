@@ -56,7 +56,6 @@ $translations = $wporgClient->getTranslations('4.1');
 ```php
 $theme        = $wporgClient->getTheme('twentyfifteen');
 $translations = $wporgClient->getThemeTranslations('twentyfifteen', '1.0');
-// TODO updates
 // TODO featured
 ```
 
@@ -67,7 +66,6 @@ $plugin       = $wporgClient->getPlugin('hello-dolly');
 $stats        = $wporgClient->getPluginStats('hello-dolly');
 $downloads    = $wporgClient->getPluginDownloads('hello-dolly', 7);
 $translations = $wporgClient->getPluginTranslations('akismet', '3.0');
-// TODO updates
 ```
 
 ### Popular importers
