@@ -51,21 +51,21 @@ $importers    = $wporgClient->getImporters();
 #### Stats
 
 ```php
-$wordpress = $wporgClient->getStats('wordpress');
-$php       = $wporgClient->getStats('php');
-$mysql     = $wporgClient->getStats('mysql');
+$wordpress    = $wporgClient->getStats('wordpress');
+$php          = $wporgClient->getStats('php');
+$mysql        = $wporgClient->getStats('mysql');
 ```
 
 #### Secret keys & salts
 
 ```php
-$secret = $wporgClient->getSalt();
+$secret       = $wporgClient->getSalt();
 ```
 
 #### Browse happy
 
 ```php
-$browser = $wporgClient->getBrowser('Opera/9.80 (Windows NT 6.1; WOW64) Presto/2.12.388 Version/12.17');
+$browser      = $wporgClient->getBrowser('Opera/9.80 (Windows NT 6.1; WOW64) Presto/2.12.388 Version/12.17');
 ```
 
 ## License
