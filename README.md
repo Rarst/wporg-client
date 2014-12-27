@@ -82,12 +82,6 @@ $importers = $wporgClient->getImporters();
 $checksums = $wporgClient->getChecksums('4.1', 'en_US');
 ```
 
-### Editor TODO
-
-```php
-// TODO
-```
-
 ### Browse happy TODO
 
 ```php
