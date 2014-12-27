@@ -172,7 +172,27 @@ class WporgService
                         ],
                     ],
                 ],
-                'getImporters' => ['extends' => 'getCoreImporters'], // shorter alias
+                'getImporters'        => [ 'extends' => 'getCoreImporters' ], // shorter alias
+                'getCoreChecksums'    => [
+                    'summary'       => 'Get core files checksums information.',
+                    'responseModel' => 'json',
+                    'httpMethod'    => 'GET',
+                    'uri'           => '/core/checksums/{api_version}/',
+                    'parameters'    => [
+                        'api_version' => [
+                            'location' => 'uri',
+                            'default'  => '1.0',
+                        ],
+                        'version'     => [
+                            'location' => 'query',
+                            'required' => 'true',
+                        ],
+                        'locale'      => [
+                            'location' => 'query',
+                            'default'  => 'en_US',
+                        ],
+                    ],
+                ],
             ],
             'models'      => [
                 'body'       => [

@@ -139,4 +139,12 @@ class WporgClient extends GuzzleClient
 
         return $this->execute($command);
     }
+
+    public function getChecksums($version, $locale = 'en_US')
+    {
+        $args    = [ 'version' => $version, 'locale' => $locale ];
+        $command = $this->getCommand('getCoreChecksums', $args);
+
+        return $this->execute($command);
+    }
 }

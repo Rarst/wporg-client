@@ -79,7 +79,7 @@ $importers = $wporgClient->getImporters();
 ### Core checksums
 
 ```php
-// TODO
+$checksums = $wporgClient->getChecksums('4.1', 'en_US');
 ```
 
 ### Editor TODO
