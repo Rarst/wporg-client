@@ -147,4 +147,12 @@ class WporgClient extends GuzzleClient
 
         return $this->execute($command);
     }
+
+    public function getBrowserUpdate($useragent)
+    {
+        $command  = $this->getCommand('getCoreBrowseHappy', [ 'useragent' => $useragent ]);
+        $response = $this->execute($command);
+
+        return $response['body'];
+    }
 }
