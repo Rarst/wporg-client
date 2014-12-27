@@ -158,7 +158,7 @@ class WporgClient extends GuzzleClient
         return $this->getCoreChecksums([ 'version' => $version, 'locale' => $locale ]);
     }
 
-    public function getBrowserUpdate($useragent)
+    public function getBrowser($useragent)
     {
         $response = $this->getCoreBrowseHappy([ 'useragent' => $useragent ]);
 
