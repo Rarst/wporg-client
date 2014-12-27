@@ -112,6 +112,13 @@ class WporgClient extends GuzzleClient
         return $this->execute($command);
     }
 
+    public function getThemeFeatureList()
+    {
+        $command = $this->getCommand('getThemesInfo', [ 'action' => 'feature_list' ]);
+
+        return $this->execute($command);
+    }
+
     public function getPlugin($slug)
     {
         $command = $this->getCommand('getPluginsInfo', [ 'slug' => $slug ]);

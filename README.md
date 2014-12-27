@@ -56,7 +56,7 @@ $translations = $wporgClient->getTranslations('4.1');
 ```php
 $theme        = $wporgClient->getTheme('twentyfifteen');
 $translations = $wporgClient->getThemeTranslations('twentyfifteen', '1.0');
-// TODO featured
+$featureList  = $wporgClient->getThemeFeatureList();
 ```
 
 ### Plugins
