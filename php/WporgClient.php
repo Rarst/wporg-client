@@ -7,7 +7,14 @@ use GuzzleHttp\Command\Guzzle\GuzzleClient;
 use GuzzleHttp\Stream\Stream;
 
 /**
+ * @method array getCoreVersionCheck()
+ * @method array getCoreCredits()
+ * @method array getThemesInfo()
+ * @method array getPluginsInfo()
+ * @method array getDownloads()
+ * @method array getCoreChecksums()
  * @method array getImporters()
+ * @method array getCoreBrowseHappy()
  */
 class WporgClient extends GuzzleClient
 {
@@ -63,18 +70,13 @@ class WporgClient extends GuzzleClient
             $args['locale'] = $locale;
         }
 
-        $command = $this->getCommand('getCoreVersionCheck', $args);
-
-        return $this->execute($command);
+        return $this->getCoreVersionCheck($args);
     }
 
     public function getCredits($version = null)
     {
         // TODO compare version to be >=3.2
-        $args    = empty( $version ) ? [ ] : [ 'version' => $version ];
-        $command = $this->getCommand('getCoreCredits', $args);
-
-        return $this->execute($command);
+        return $this->getCoreCredits(empty( $version ) ? [ ] : [ 'version' => $version ]);
     }
 
     public function getTranslations($version = null)
@@ -93,8 +95,7 @@ class WporgClient extends GuzzleClient
 
     public function getTheme($slug)
     {
-        $command  = $this->getCommand('getThemesInfo', [ 'request' => [ 'slug' => $slug ] ]);
-        $response = $this->execute($command);
+        $response = $this->getThemesInfo([ 'request' => [ 'slug' => $slug ] ]);
 
         return $response['body'];
     }
@@ -114,16 +115,12 @@ class WporgClient extends GuzzleClient
 
     public function getThemeFeatureList()
     {
-        $command = $this->getCommand('getThemesInfo', [ 'action' => 'feature_list' ]);
-
-        return $this->execute($command);
+        return $this->getThemesInfo([ 'action' => 'feature_list' ]);
     }
 
     public function getPlugin($slug)
     {
-        $command = $this->getCommand('getPluginsInfo', [ 'slug' => $slug ]);
-
-        return $this->execute($command);
+        return $this->getPluginsInfo([ 'slug' => $slug ]);
     }
 
     public function getPluginStats($slug)
@@ -139,9 +136,8 @@ class WporgClient extends GuzzleClient
         if (! empty( $limit )) {
             $args['limit'] = (int) $limit;
         }
-        $command = $this->getCommand('getDownloads', $args);
 
-        return $this->execute($command);
+        return $this->getDownloads($args);
     }
 
     public function getPluginTranslations($slug, $version = null)
@@ -159,16 +155,12 @@ class WporgClient extends GuzzleClient
 
     public function getChecksums($version, $locale = 'en_US')
     {
-        $args    = [ 'version' => $version, 'locale' => $locale ];
-        $command = $this->getCommand('getCoreChecksums', $args);
-
-        return $this->execute($command);
+        return $this->getCoreChecksums([ 'version' => $version, 'locale' => $locale ]);
     }
 
     public function getBrowserUpdate($useragent)
     {
-        $command  = $this->getCommand('getCoreBrowseHappy', [ 'useragent' => $useragent ]);
-        $response = $this->execute($command);
+        $response = $this->getCoreBrowseHappy([ 'useragent' => $useragent ]);
 
         return $response['body'];
     }
