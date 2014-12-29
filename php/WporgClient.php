@@ -18,6 +18,23 @@ use GuzzleHttp\Stream\Stream;
  */
 class WporgClient extends GuzzleClient
 {
+    protected $disabledFields = [
+        'requires'      => false,
+        'tested'        => false,
+        'compatibility' => false,
+        'rating'        => false,
+        'num_ratings'   => false,
+        'ratings'       => false,
+        'downloaded'    => false,
+        'last_updated'  => false,
+        'added'         => false,
+        'homepage'      => false,
+        'sections'      => false,
+        'downloadlink'  => false,
+        'tags'          => false,
+        'donate_link'   => false,
+    ];
+    
     public static function getClient(Client $client = null, Description $description = null, array $config = [ ])
     {
         if (empty( $client )) {
@@ -118,9 +135,17 @@ class WporgClient extends GuzzleClient
         return $this->getThemesInfo([ 'action' => 'feature_list' ]);
     }
 
-    public function getPlugin($slug)
+    public function getPlugin($slug, $fields = null)
     {
-        return $this->getPluginsInfo([ 'slug' => $slug ]);
+        $response = $this->getPluginsInfo([
+            'action'  => 'plugin_information',
+            'request' => [
+                'slug'   => $slug,
+                'fields' => is_array($fields) ? array_diff_key($this->disabledFields, array_flip($fields)) : [ ],
+            ]
+        ]);
+
+        return $response['body'];
     }
 
     public function getPluginStats($slug)
