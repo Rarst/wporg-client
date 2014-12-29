@@ -33,6 +33,15 @@ $checksums    = $wporgClient->getChecksums('4.1', 'en_US');
 ```php
 $theme        = $wporgClient->getTheme('twentyfifteen');
 $translations = $wporgClient->getThemeTranslations('twentyfifteen', '1.0');
+
+$popular      = $wporgClient->getThemesBy('browse', 'popular');
+$featured     = $wporgClient->getThemesBy('browse', 'featured');
+$new          = $wporgClient->getThemesBy('browse', 'new');
+$updated      = $wporgClient->getThemesBy('browse', 'updated');
+$search       = $wporgClient->getThemesBy('search', 'twenty');
+$tagged       = $wporgClient->getThemesBy('tag', 'white');
+$authors      = $wporgClient->getThemesBy('author', 'wordpressdotorg');
+
 $featureList  = $wporgClient->getThemeFeatureList();
 ```
 

@@ -136,6 +136,23 @@ class WporgClient extends GuzzleClient
         return $this->getThemesInfo([ 'action' => 'feature_list' ]);
     }
 
+    public function getThemesBy($type, $value, $page = 1, $perPage = 10, $fields = null)
+    {
+        $response = $this->getThemesInfo([
+            'action'  => 'query_themes',
+            'request' => [
+                $type      => $value,
+                'page'     => $page,
+                'per_page' => $perPage,
+                'fields'   => is_array($fields) ? array_diff_key($this->disabledFields, array_flip($fields)) : [ ],
+            ],
+        ]);
+
+        $response['body']['themes'] = array_map('get_object_vars', $response['body']['themes']);
+
+        return $response['body'];
+    }
+
     public function getPlugin($slug, $fields = null)
     {
         $response = $this->getPluginsInfo([
