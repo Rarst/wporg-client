@@ -46,6 +46,8 @@ $translations = $wporgClient->getPluginTranslations('akismet', '3.0');
 
 $popular      = $wporgClient->getPluginsBy('browse', 'popular');
 $featured     = $wporgClient->getPluginsBy('browse', 'featured');
+$new          = $wporgClient->getPluginsBy('browse', 'new');
+$updated      = $wporgClient->getPluginsBy('browse', 'updated');
 $search       = $wporgClient->getPluginsBy('search', 'dolly');
 $tagged       = $wporgClient->getPluginsBy('tag', 'widget');
 $authors      = $wporgClient->getPluginsBy('author', 'wordpressdotorg');
