@@ -13,7 +13,7 @@ composer require rarst/wporg-client:dev-master
 ```
 
 ```php
-$wporgClient = \Rarst\Guzzle\WporgClient::getClient();
+$wporgClient  = \Rarst\Guzzle\WporgClient::getClient();
 ```
 
 ## Examples
@@ -40,11 +40,16 @@ $featureList  = $wporgClient->getThemeFeatureList();
 
 ```php
 $plugin       = $wporgClient->getPlugin('hello-dolly');
-$pluginFields = $wporgClient->getPlugin('hello-dolly', [ 'last_updated' ]);
 $stats        = $wporgClient->getPluginStats('hello-dolly');
 $downloads    = $wporgClient->getPluginDownloads('hello-dolly', 7);
 $translations = $wporgClient->getPluginTranslations('akismet', '3.0');
+
 $importers    = $wporgClient->getImporters();
+$popular      = $wporgClient->getPluginsBy('browse', 'popular');
+$featured     = $wporgClient->getPluginsBy('browse', 'featured');
+$search       = $wporgClient->getPluginsBy('search', 'dolly');
+$tagged       = $wporgClient->getPluginsBy('tag', 'widget');
+$authors      = $wporgClient->getPluginsBy('author', 'wordpressdotorg');
 ```
 
 ### Other

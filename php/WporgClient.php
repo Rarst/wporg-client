@@ -19,6 +19,7 @@ use GuzzleHttp\Stream\Stream;
 class WporgClient extends GuzzleClient
 {
     protected $disabledFields = [
+        'description'   => false,
         'requires'      => false,
         'tested'        => false,
         'compatibility' => false,
@@ -176,6 +177,23 @@ class WporgClient extends GuzzleClient
         $command = $this->getCommand('getTranslations', $args);
 
         return $this->execute($command);
+    }
+
+    public function getPluginsBy($type, $value, $page = 1, $perPage = 10, $fields = null)
+    {
+        $response = $this->getPluginsInfo([
+            'action'  => 'query_plugins',
+            'request' => [
+                $type      => $value,
+                'page'     => $page,
+                'per_page' => $perPage,
+                'fields'   => is_array($fields) ? array_diff_key($this->disabledFields, array_flip($fields)) : [ ],
+            ]
+        ]);
+
+        $response['body']['plugins'] = array_map('get_object_vars', $response['body']['plugins']);
+
+        return $response['body'];
     }
 
     public function getChecksums($version, $locale = 'en_US')
