@@ -188,10 +188,20 @@ class WporgClient extends GuzzleClient
                 'page'     => $page,
                 'per_page' => $perPage,
                 'fields'   => is_array($fields) ? array_diff_key($this->disabledFields, array_flip($fields)) : [ ],
-            ]
+            ],
         ]);
 
         $response['body']['plugins'] = array_map('get_object_vars', $response['body']['plugins']);
+
+        return $response['body'];
+    }
+
+    public function getHotTags($number = 100)
+    {
+        $response = $this->getPluginsInfo([
+            'action'  => 'hot_tags',
+            'request' => [ 'number' => $number ],
+        ]);
 
         return $response['body'];
     }

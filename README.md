@@ -44,12 +44,14 @@ $stats        = $wporgClient->getPluginStats('hello-dolly');
 $downloads    = $wporgClient->getPluginDownloads('hello-dolly', 7);
 $translations = $wporgClient->getPluginTranslations('akismet', '3.0');
 
-$importers    = $wporgClient->getImporters();
 $popular      = $wporgClient->getPluginsBy('browse', 'popular');
 $featured     = $wporgClient->getPluginsBy('browse', 'featured');
 $search       = $wporgClient->getPluginsBy('search', 'dolly');
 $tagged       = $wporgClient->getPluginsBy('tag', 'widget');
 $authors      = $wporgClient->getPluginsBy('author', 'wordpressdotorg');
+
+$importers    = $wporgClient->getImporters();
+$tags         = $wporgClient->getHotTags();
 ```
 
 ### Other
