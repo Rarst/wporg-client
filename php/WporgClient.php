@@ -116,9 +116,14 @@ class WporgClient extends GuzzleClient
         return $this->execute($command);
     }
 
-    public function getTheme($slug)
+    public function getTheme($slug, $fields = null)
     {
-        $response = $this->getThemesInfo([ 'request' => [ 'slug' => $slug ] ]);
+        $response = $this->getThemesInfo([
+            'request' => [
+                'slug'   => $slug,
+                'fields' => $this->getRequestFields($fields)
+            ]
+        ]);
 
         return $response['body'];
     }
