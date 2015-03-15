@@ -35,7 +35,12 @@ class WporgClient extends GuzzleClient
         'tags'          => false,
         'donate_link'   => false,
     ];
-    
+
+    protected function getRequestFields($fields)
+    {
+        return is_array($fields) ? array_merge($this->disabledFields, array_fill_keys($fields, true)) : [];
+    }
+
     public static function getClient(Client $client = null, Description $description = null, array $config = [ ])
     {
         if (empty( $client )) {
@@ -111,9 +116,14 @@ class WporgClient extends GuzzleClient
         return $this->execute($command);
     }
 
-    public function getTheme($slug)
+    public function getTheme($slug, $fields = null)
     {
-        $response = $this->getThemesInfo([ 'request' => [ 'slug' => $slug ] ]);
+        $response = $this->getThemesInfo([
+            'request' => [
+                'slug'   => $slug,
+                'fields' => $this->getRequestFields($fields)
+            ]
+        ]);
 
         return $response['body'];
     }
@@ -144,7 +154,7 @@ class WporgClient extends GuzzleClient
                 $type      => $value,
                 'page'     => $page,
                 'per_page' => $perPage,
-                'fields'   => is_array($fields) ? array_diff_key($this->disabledFields, array_flip($fields)) : [ ],
+                'fields'   => $this->getRequestFields($fields),
             ],
         ]);
 
@@ -159,7 +169,7 @@ class WporgClient extends GuzzleClient
             'action'  => 'plugin_information',
             'request' => [
                 'slug'   => $slug,
-                'fields' => is_array($fields) ? array_diff_key($this->disabledFields, array_flip($fields)) : [ ],
+                'fields' => $this->getRequestFields($fields),
             ]
         ]);
 
@@ -204,7 +214,7 @@ class WporgClient extends GuzzleClient
                 $type      => $value,
                 'page'     => $page,
                 'per_page' => $perPage,
-                'fields'   => is_array($fields) ? array_diff_key($this->disabledFields, array_flip($fields)) : [ ],
+                'fields'   => $this->getRequestFields($fields),
             ],
         ]);
 
