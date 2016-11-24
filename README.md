@@ -4,8 +4,6 @@ WPorg Client is a standalone HTTP client for public [WordPress.org API](http://c
 
 It aims to provide consistent centralized experience and is independent from WordPress core.
 
-Client is currently considered unstable and is based on Guzzle Services beta.
-
 ## Installation
 
 ```bash
