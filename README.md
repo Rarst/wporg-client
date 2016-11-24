@@ -7,7 +7,7 @@ It aims to provide consistent centralized experience and is independent from Wor
 ## Installation
 
 ```bash
-composer require rarst/wporg-client:dev-master
+composer require rarst/wporg-client
 ```
 
 ```php
