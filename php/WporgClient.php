@@ -183,11 +183,19 @@ class WporgClient extends GuzzleClient
         return $this->execute($command);
     }
 
+    /**
+     * @param string   $slug  Plugin slug.
+     * @param null|int $limit Number of days to retrieve, maximum 730.
+     *
+     * @return array
+     */
     public function getPluginDownloads($slug, $limit = null)
     {
         $args = [ 'slug' => $slug ];
-        if (! empty( $limit )) {
-            $args['limit'] = (int) $limit;
+
+        if (! empty($limit)) {
+            $limit         = (int)$limit;
+            $args['limit'] = $limit > 730 ? 730 : $limit;
         }
 
         return $this->getDownloads($args);
