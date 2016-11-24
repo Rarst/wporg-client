@@ -87,13 +87,4 @@ $browser      = $wporgClient->getBrowser('Opera/9.80 (Windows NT 6.1; WOW64) Pre
 
 ## License
 
-```
-Licenses: MIT
-Dependencies:
-  guzzlehttp/command           0.7.0    MIT
-  guzzlehttp/guzzle            5.1.0    MIT
-  guzzlehttp/guzzle-services   0.5.0    MIT
-  guzzlehttp/ringphp           1.0.5    MIT
-  guzzlehttp/streams           3.0.0    MIT
-  react/promise                v2.1.0   MIT
-```
+MIT
