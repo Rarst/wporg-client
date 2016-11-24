@@ -4,7 +4,6 @@ namespace Rarst\Guzzle;
 use GuzzleHttp\Client;
 use GuzzleHttp\Command\Guzzle\Description;
 use GuzzleHttp\Command\Guzzle\GuzzleClient;
-use GuzzleHttp\Stream\Stream;
 
 /**
  * @method array getCoreVersionCheck()
@@ -51,7 +50,7 @@ class WporgClient extends GuzzleClient
             $description = new Description(WporgService::getDescription());
         }
 
-        return new self($client, $description, $config);
+        return new self($client, $description, null, null, null, $config);
     }
 
     public static function toObject(array $array)
@@ -158,9 +157,10 @@ class WporgClient extends GuzzleClient
             ],
         ]);
 
-        $response['body']['themes'] = array_map('get_object_vars', $response['body']['themes']);
+        $body           = $response['body'];
+        $body['themes'] = array_map('get_object_vars', $body['themes']);
 
-        return $response['body'];
+        return $body;
     }
 
     public function getPlugin($slug, $fields = null)
@@ -218,9 +218,10 @@ class WporgClient extends GuzzleClient
             ],
         ]);
 
-        $response['body']['plugins'] = array_map('get_object_vars', $response['body']['plugins']);
+        $body            = $response['body'];
+        $body['plugins'] = array_map('get_object_vars', $body['plugins']);
 
-        return $response['body'];
+        return $body;
     }
 
     public function getHotTags($number = 100)

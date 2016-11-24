@@ -131,11 +131,11 @@ class WporgService
                             'default'  => '1.0',
                         ],
                         'action'  => [
-                            'location' => 'postField',
+                            'location' => 'formParam',
                             'default'  => 'theme_information',
                         ],
                         'request' => [
-                            'location' => 'postField',
+                            'location' => 'formParam',
                             'type'     => 'array',
                             'filters'  => [
                                 'Rarst\\Guzzle\\WporgClient::toObject',
@@ -155,10 +155,10 @@ class WporgService
                             'default'  => '1.0',
                         ],
                         'action'  => [
-                            'location' => 'postField',
+                            'location' => 'formParam',
                         ],
                         'request' => [
-                            'location' => 'postField',
+                            'location' => 'formParam',
                             'type'     => 'array',
                             'filters'  => [
                                 'Rarst\\Guzzle\\WporgClient::toObject',
@@ -214,7 +214,7 @@ class WporgService
                             'default'  => '1.0',
                         ],
                         'useragent'     => [
-                            'location' => 'postField',
+                            'location' => 'formParam',
                             'required' => 'true',
                         ],
                     ],
