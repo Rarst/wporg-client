@@ -11,7 +11,7 @@
     ],
     "require"    : {
         "guzzlehttp/guzzle"         : "^6.2.2",
-        "guzzlehttp/guzzle-services": "1.*"
+        "guzzlehttp/guzzle-services": "1.0.*"
     },
     "autoload"   : {
         "psr-4": {
