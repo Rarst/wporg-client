@@ -63,6 +63,17 @@ $importers    = $wporgClient->getImporters();
 $tags         = $wporgClient->getHotTags();
 ```
 
+### Events
+
+```php
+$location     = $wporgClient->getEvents(['location' => 'Seattle']));
+$number       = $wporgClient->getEvents(['location' => 'Australia', 'number' => 5]));
+$locale       = $wporgClient->getEvents(['timezone' => 'Europe/Berlin', 'locale' => 'de_DE', 'location' => 'Dresden']));
+$coordinates  = $wporgClient->getEvents(['latitude' => '51.051', 'longitude' => '13.738']));
+$ip           = $wporgClient->getEvents(['ip' => '136.0.16.1']));
+$country      = $wporgClient->getEvents(['country' => 'IT']));
+```
+
 ### Other
 
 #### Stats

@@ -14,6 +14,7 @@ use GuzzleHttp\Command\Guzzle\GuzzleClient;
  * @method array getCoreChecksums()
  * @method array getImporters()
  * @method array getCoreBrowseHappy()
+ * @method array getEvents(array $arguments = [])
  */
 class WporgClient extends GuzzleClient
 {

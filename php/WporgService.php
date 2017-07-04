@@ -219,6 +219,43 @@ class WporgService
                         ],
                     ],
                 ],
+                'getEvents' => [
+                    'summary'       => 'Get WordCamps and meetups.',
+                    'responseModel' => 'json',
+                    'httpMethod'    => 'GET',
+                    'uri'           => '/events/{api_version}/',
+                    'parameters'    => [
+                        'api_version' => [
+                            'location' => 'uri',
+                            'default'  => '1.0',
+                        ],
+                        'number' => [
+                            'location' => 'query',
+                            'default'  => 10,
+                        ],
+                        'location' => [
+                            'location' => 'query',
+                        ],
+                        'locale' => [
+                            'location' => 'query',
+                        ],
+                        'timezone' => [
+                            'location' => 'query',
+                        ],
+                        'latitude' => [
+                            'location' => 'query',
+                        ],
+                        'longitude' => [
+                            'location' => 'query',
+                        ],
+                        'ip' => [
+                            'location' => 'query',
+                        ],
+                        'country' => [
+                            'location' => 'query',
+                        ],
+                    ]
+                ]
             ],
             'models'      => [
                 'body'       => [
