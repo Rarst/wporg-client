@@ -146,27 +146,20 @@ class WporgService
                 ],
                 'getPluginsInfo'      => [
                     'summary'       => 'Get repository plugin information.',
-                    'responseModel' => 'serialized',
-                    'httpMethod'    => 'POST',
-                    'uri'           => 'plugins/info/{version}/{slug}',
+                    'responseModel' => 'json',
+                    'httpMethod'    => 'GET',
+                    'uri'           => 'plugins/info/{version}/',
                     'parameters'    => [
                         'version' => [
                             'location' => 'uri',
-                            'default'  => '1.0',
+                            'default'  => '1.1',
                         ],
                         'action'  => [
-                            'location' => 'formParam',
+                            'location' => 'query',
                         ],
                         'request' => [
-                            'location' => 'formParam',
+                            'location' => 'query',
                             'type'     => 'array',
-                            'filters'  => [
-                                'Rarst\\Guzzle\\WporgClient::toObject',
-                                'serialize',
-                            ],
-                        ],
-                        'slug'    => [
-                            'location' => 'uri',
                         ],
                     ],
                 ],

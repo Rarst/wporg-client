@@ -4,12 +4,13 @@ namespace Rarst\Guzzle;
 use GuzzleHttp\Client;
 use GuzzleHttp\Command\Guzzle\Description;
 use GuzzleHttp\Command\Guzzle\GuzzleClient;
+use GuzzleHttp\Command\Result;
 
 /**
  * @method array getCoreVersionCheck()
  * @method array getCoreCredits()
  * @method array getThemesInfo()
- * @method array getPluginsInfo()
+ * @method Result getPluginsInfo(array $arguments)
  * @method array getDownloads()
  * @method array getCoreChecksums()
  * @method array getImporters()
@@ -19,21 +20,22 @@ use GuzzleHttp\Command\Guzzle\GuzzleClient;
 class WporgClient extends GuzzleClient
 {
     protected $disabledFields = [
-        'description'   => false,
-        'requires'      => false,
-        'tested'        => false,
-        'compatibility' => false,
-        'rating'        => false,
-        'num_ratings'   => false,
-        'ratings'       => false,
-        'downloaded'    => false,
-        'last_updated'  => false,
-        'added'         => false,
-        'homepage'      => false,
-        'sections'      => false,
-        'downloadlink'  => false,
-        'tags'          => false,
-        'donate_link'   => false,
+        'description'     => false,
+        'requires'        => false,
+        'tested'          => false,
+        'compatibility'   => false,
+        'rating'          => false,
+        'num_ratings'     => false,
+        'ratings'         => false,
+        'downloaded'      => false,
+        'last_updated'    => false,
+        'added'           => false,
+        'homepage'        => false,
+        'sections'        => false,
+        'downloadlink'    => false,
+        'tags'            => false,
+        'donate_link'     => false,
+        'active_installs' => false,
     ];
 
     protected function getRequestFields($fields)
@@ -174,7 +176,7 @@ class WporgClient extends GuzzleClient
             ]
         ]);
 
-        return $response['body'];
+        return $response->toArray();
     }
 
     public function getPluginStats($slug)
@@ -227,20 +229,17 @@ class WporgClient extends GuzzleClient
             ],
         ]);
 
-        $body            = $response['body'];
-        $body['plugins'] = array_map('get_object_vars', $body['plugins']);
-
-        return $body;
+        return $response->toArray();
     }
 
     public function getHotTags($number = 100)
     {
         $response = $this->getPluginsInfo([
             'action'  => 'hot_tags',
-            'request' => [ 'number' => $number ],
+            'request' => [ 'number' => $number ], // Number currently broken in API.
         ]);
 
-        return $response['body'];
+        return $response->toArray();
     }
 
     public function getChecksums($version, $locale = 'en_US')

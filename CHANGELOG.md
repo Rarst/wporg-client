@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
  - added explicit MIT license file
 
+### Changed
+ - updated plugins info to API version 1.1
+
 ## 0.4 - 2017-07-04
 
 ### Added
