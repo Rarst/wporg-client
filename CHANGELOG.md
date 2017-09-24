@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
+## 0.5 - 2017-09-24
+
 ### Added
  - added explicit MIT license file
 
@@ -13,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - updated plugins info to API version 1.1
  - updated themes info to API version 1.1
  - updated Browse Happy to API version 1.1
+ - updated dependencies (Guzzle 6.3, Guzzle Services 1.1.2)
 
 ### Deprecated
  - serialized response model and to object/array helper methods

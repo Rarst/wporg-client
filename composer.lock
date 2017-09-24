@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ac22c4eef5c1306b90465749286eb4fe",
+    "content-hash": "c8750363583af0efbe2e68d508cdfcf9",
     "packages": [
         {
             "name": "guzzlehttp/command",
@@ -61,16 +61,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.2.3",
+            "version": "6.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "8d6c6cc55186db87b7dc5009827429ba4e9dc006"
+                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/8d6c6cc55186db87b7dc5009827429ba4e9dc006",
-                "reference": "8d6c6cc55186db87b7dc5009827429ba4e9dc006",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/f4db5a78a5ea468d4831de7f0bf9d9415e348699",
+                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699",
                 "shasum": ""
             },
             "require": {
@@ -80,8 +80,11 @@
             },
             "require-dev": {
                 "ext-curl": "*",
-                "phpunit/phpunit": "^4.0",
+                "phpunit/phpunit": "^4.0 || ^5.0",
                 "psr/log": "^1.0"
+            },
+            "suggest": {
+                "psr/log": "Required for using the Log middleware"
             },
             "type": "library",
             "extra": {
@@ -119,20 +122,20 @@
                 "rest",
                 "web service"
             ],
-            "time": "2017-02-28T22:50:30+00:00"
+            "time": "2017-06-22T18:50:49+00:00"
         },
         {
             "name": "guzzlehttp/guzzle-services",
-            "version": "1.0.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle-services.git",
-                "reference": "ad34f0e144ca1a5dfa68d8c60c463740dfafe276"
+                "reference": "0a8b5d304305a36b7a907c8ccf4971f232c54832"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle-services/zipball/ad34f0e144ca1a5dfa68d8c60c463740dfafe276",
-                "reference": "ad34f0e144ca1a5dfa68d8c60c463740dfafe276",
+                "url": "https://api.github.com/repos/guzzle/guzzle-services/zipball/0a8b5d304305a36b7a907c8ccf4971f232c54832",
+                "reference": "0a8b5d304305a36b7a907c8ccf4971f232c54832",
                 "shasum": ""
             },
             "require": {
@@ -179,7 +182,7 @@
                 }
             ],
             "description": "Provides an implementation of the Guzzle Command library that uses Guzzle service descriptions to describe web services, serialize requests, and parse responses into easy to use model structures.",
-            "time": "2017-01-13T13:30:34+00:00"
+            "time": "2017-05-19T09:30:40+00:00"
         },
         {
             "name": "guzzlehttp/promises",
