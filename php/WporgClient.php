@@ -14,7 +14,7 @@ use GuzzleHttp\Command\Result;
  * @method array getDownloads()
  * @method array getCoreChecksums()
  * @method array getImporters()
- * @method array getCoreBrowseHappy()
+ * @method Result getCoreBrowseHappy(array $arguments)
  * @method array getEvents(array $arguments = [])
  */
 class WporgClient extends GuzzleClient
@@ -246,8 +246,6 @@ class WporgClient extends GuzzleClient
 
     public function getBrowser($useragent)
     {
-        $response = $this->getCoreBrowseHappy([ 'useragent' => $useragent ]);
-
-        return $response['body'];
+        return $this->getCoreBrowseHappy([ 'useragent' => $useragent ])->toArray();
     }
 }

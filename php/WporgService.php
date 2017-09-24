@@ -194,13 +194,13 @@ class WporgService
                 ],
                 'getCoreBrowseHappy'    => [
                     'summary'       => 'Get reference to documentation.',
-                    'responseModel' => 'serialized',
+                    'responseModel' => 'json',
                     'httpMethod'    => 'POST',
                     'uri'           => '/core/browse-happy/{api_version}/',
                     'parameters'    => [
                         'api_version' => [
                             'location' => 'uri',
-                            'default'  => '1.0',
+                            'default'  => '1.1',
                         ],
                         'useragent'     => [
                             'location' => 'formParam',
