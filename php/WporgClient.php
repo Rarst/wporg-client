@@ -9,7 +9,7 @@ use GuzzleHttp\Command\Result;
 /**
  * @method array getCoreVersionCheck()
  * @method array getCoreCredits()
- * @method array getThemesInfo()
+ * @method Result getThemesInfo(array $arguments)
  * @method Result getPluginsInfo(array $arguments)
  * @method array getDownloads()
  * @method array getCoreChecksums()
@@ -127,7 +127,7 @@ class WporgClient extends GuzzleClient
             ]
         ]);
 
-        return $response['body'];
+        return $response->toArray();
     }
 
     public function getThemeTranslations($slug, $version = null)
@@ -145,7 +145,7 @@ class WporgClient extends GuzzleClient
 
     public function getThemeFeatureList()
     {
-        return $this->getThemesInfo([ 'action' => 'feature_list' ]);
+        return $this->getThemesInfo([ 'action' => 'feature_list' ])->toArray();
     }
 
     public function getThemesBy($type, $value, $page = 1, $perPage = 10, $fields = null)
@@ -160,10 +160,7 @@ class WporgClient extends GuzzleClient
             ],
         ]);
 
-        $body           = $response['body'];
-        $body['themes'] = array_map('get_object_vars', $body['themes']);
-
-        return $body;
+        return $response->toArray();
     }
 
     public function getPlugin($slug, $fields = null)

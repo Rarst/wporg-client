@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
  - updated plugins info to API version 1.1
+ - updated themes info to API version 1.1
 
 ## 0.4 - 2017-07-04
 

@@ -122,25 +122,21 @@ class WporgService
                 ],
                 'getThemesInfo'       => [
                     'summary'       => 'Get repository theme information.',
-                    'responseModel' => 'serialized',
-                    'httpMethod'    => 'POST',
+                    'responseModel' => 'json',
+                    'httpMethod'    => 'GET',
                     'uri'           => 'themes/info/{version}/',
                     'parameters'    => [
                         'version' => [
                             'location' => 'uri',
-                            'default'  => '1.0',
+                            'default'  => '1.1',
                         ],
                         'action'  => [
-                            'location' => 'formParam',
+                            'location' => 'query',
                             'default'  => 'theme_information',
                         ],
                         'request' => [
-                            'location' => 'formParam',
+                            'location' => 'query',
                             'type'     => 'array',
-                            'filters'  => [
-                                'Rarst\\Guzzle\\WporgClient::toObject',
-                                'serialize',
-                            ],
                         ],
                     ],
                 ],
