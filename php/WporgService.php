@@ -260,7 +260,7 @@ class WporgService
                     'type'                 => 'object',
                     'additionalProperties' => [ 'location' => 'json' ],
                 ],
-                'serialized' => [
+                'serialized' => [ // @deprecated 0.5:0.6 All APIs updated to versions with JSON responses.
                     'type'       => 'object',
                     'properties' => [
                         'body' => [

@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - updated themes info to API version 1.1
  - updated Browse Happy to API version 1.1
 
+### Deprecated
+ - serialized response model and to object/array helper methods
+
 ## 0.4 - 2017-07-04
 
 ### Added
