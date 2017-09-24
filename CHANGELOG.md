@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
+### Added
+ - added explicit MIT license file
+
 ## 0.4 - 2017-07-04
 
 ### Added
