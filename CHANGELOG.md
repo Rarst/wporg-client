@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - dependencies (Guzzle 7, latest Guzzle Services)
 
+### Removed
+- deprecated parts, related to older serialized API calls
+
 ## 0.5 - 2017-09-24
 
 ### Added

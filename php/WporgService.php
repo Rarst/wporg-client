@@ -260,16 +260,6 @@ class WporgService
                     'type'                 => 'object',
                     'additionalProperties' => [ 'location' => 'json' ],
                 ],
-                'serialized' => [ // @deprecated 0.5:0.6 All APIs updated to versions with JSON responses.
-                    'type'       => 'object',
-                    'properties' => [
-                        'body' => [
-                            'location' => 'body',
-                            'type'     => 'string',
-                            'filters'  => [ 'unserialize', 'Rarst\\Guzzle\\WporgClient::maybeToArray' ],
-                        ],
-                    ],
-                ],
             ]
         ];
     }

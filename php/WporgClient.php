@@ -56,22 +56,6 @@ class WporgClient extends GuzzleClient
         return new self($client, $description, null, null, null, $config);
     }
 
-    /**
-     * @deprecated 0.5:0.6 Unnecessary filter helper as APIs moved on to JSON responses.
-     */
-    public static function toObject(array $array)
-    {
-        return (object) $array;
-    }
-
-    /**
-     * @deprecated 0.5:0.6 Unnecessary filter helper as APIs moved on to JSON responses.
-     */
-    public static function maybeToArray($input)
-    {
-        return is_object($input) ? get_object_vars($input) : $input;
-    }
-
     public function getSalt()
     {
         $command  = $this->getCommand('getSalt');
