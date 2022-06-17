@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
+### Added
+- minimum PHP 7.2.5 requirement
+
+### Changed
+- dependencies (Guzzle 7, latest Guzzle Services)
+
 ## 0.5 - 2017-09-24
 
 ### Added
