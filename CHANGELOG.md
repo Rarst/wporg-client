@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
+## 0.6 - 2022-06-20
+
 ### Added
 - minimum PHP 7.2.5 requirement
 
