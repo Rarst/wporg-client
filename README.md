@@ -1,7 +1,7 @@
 # WPorg Client
 
-![Current version](https://img.shields.io/packagist/v/rarst/wporg-client?label=version)
-![PHP required](https://img.shields.io/packagist/php-v/rarst/wporg-client)
+[![Current version](https://img.shields.io/packagist/v/rarst/wporg-client?label=version)](CHANGELOG.md)
+[![PHP required](https://img.shields.io/packagist/php-v/rarst/wporg-client)](composer.json)
 
 WPorg Client is a standalone HTTP client for public [WordPress.org API](http://codex.wordpress.org/WordPress.org_API).
 
