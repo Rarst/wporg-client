@@ -5,12 +5,11 @@
     "authors"    : [
         {
             "name"    : "Andrey Savchenko",
-            "email"   : "contact@rarst.net",
-            "homepage": "http://www.Rarst.net/"
+            "homepage": "https://www.Rarst.net/"
         }
     ],
     "require"    : {
-        "php": "^7.2.5 || ^8.0",
+        "php": "^7.2.5 || ^8",
         "guzzlehttp/guzzle-services": "^1.3.2"
     },
     "autoload"   : {
